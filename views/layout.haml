@@ -1,0 +1,20 @@
+%html#tonight-pm
+  %head
+    %title
+      = "#{@event.title} -" if @event
+      tonight.pm
+    %meta{ :name => 'viewport', :content => 'width=320, initial-scale=1, maximum-scale=1' }
+    %link{ :rel => 'stylesheet', :href => '/tonight.css' }
+    - if false
+      %script{ :src => 'jquery.js' }
+      %script{ :src => 'date-en-US.js' }
+      %script{ :src => 'jquery.timezone.js' }
+      :javascript
+        $(function() {
+          $('.timestamp').timezone();
+        });
+
+  %body{ :id => @info ? 'info' : 'out' }
+    = yield
+    - unless @info
+      %script{ :src => "/tonight.min.js" }

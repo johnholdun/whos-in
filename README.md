@@ -1,4 +1,4 @@
-## tonight.pm
+##tonight.pm
 
 tonight.pm is a handy tool to facilitate RSVPs on the day of an event. Maybe you have a weekly meetup or a group of friends who all go to the same bar, and it would help if you knew how many people were going to be there.
 
@@ -31,4 +31,8 @@ Tonight.pm uses:
 [haml]: http://haml-lang.com
 [sass]: http://sass-lang.com
 [ssd]: http://rubygems.org/gems/sinatra-subdomain
+<<<<<<< HEAD
 [rw]: http://rubygems.org/gems/random-word
+=======
+[rw]: http://rubygems.org/gems/random-word
+>>>>>>> 0c38051e25049e18643fef534e036a19caafd4f8

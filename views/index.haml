@@ -1,30 +1,24 @@
-%html
-  %head
-    %title Who&rsquo;s In?
-    %link{ :rel => 'stylesheet', :href => 'whos-in.css' }
-    %meta{ :name => 'viewport', :content => 'width=320, initial-scale=1, maximum-scale=1' }
-    
-  %body
-    %h1#header Who&rsquo;s In?
+= haml :_header
 
-    %h2
-      Current Total:
-      %strong= @attending.count
-      
-    %form#add{ :action => '/add', :method => 'POST' }
-      %label{ :for => 'name' } Name
-      %input{ :type => 'text', :id => 'name', :name => 'name', :autofocus => true }
-      %button I&rsquo;m in
+.in.responders
+  %form.add{ :action => '/add', :method => 'POST' }
+    %label{ :for => 'name' } Name
+    %input{ :type => 'text', :id => 'name', :name => 'name', :autofocus => true }
+    %button I&rsquo;m in
 
-    %ul#attendees
-      - @attending.each do |attendee|
-        %li{ :class => (@added_id == attendee.id ? 'added' : nil) }
-          %span.name= attendee.name
-          %span.timestamp= attendee.timestamp.strftime('%I:%M%p').sub(/^0/, '')
-          %form.delete{ :action => '/delete', :method => 'POST' }
-            %input{ :name => 'id', :value => attendee.id, :type => 'hidden' }
-            %button{ :title => "Delete #{ attendee.name }" } &times;
+  = haml :_responders, :locals => { :responders => @responders[:in] }
 
-    %p#footer
-      Delete responsibly.
+.out.responders
+  %form.add{ :action => '/add', :method => 'POST' }
+    %label{ :for => 'name' } Name
+    %input{ :type => 'text', :id => 'name', :name => 'name' }
+    %button{ :name => 'out', :value => 'true' } I&rsquo;m out
 
+  = haml :_responders, :locals => { :responders => @responders[:out] }
+
+%p#footer
+  %a{ :href => '/copy' } Copy names
+  &bull;
+  Delete responsibly.
+  &bull;
+  %a{ :href => 'http://tonight.pm' } tonight.pm
