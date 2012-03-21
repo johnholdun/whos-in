@@ -31,8 +31,4 @@ Tonight.pm uses:
 [haml]: http://haml-lang.com
 [sass]: http://sass-lang.com
 [ssd]: http://rubygems.org/gems/sinatra-subdomain
-<<<<<<< HEAD
 [rw]: http://rubygems.org/gems/random-word
-=======
-[rw]: http://rubygems.org/gems/random-word
->>>>>>> added a space to the title of the thing in the file
