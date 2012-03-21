@@ -1,4 +1,4 @@
-##  tonight.pm
+##         tonight.pm
 
 tonight.pm is a handy tool to facilitate RSVPs on the day of an event. Maybe you have a weekly meetup or a group of friends who all go to the same bar, and it would help if you knew how many people were going to be there.
 
